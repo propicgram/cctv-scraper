@@ -1,0 +1,26 @@
+name: Scrape CCTV Video URL
+
+on:
+  schedule:
+    - cron: "0 * * * *"  # 매시간 실행 (UTC 기준)
+  workflow_dispatch:  # 수동 실행 가능
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 저장소 체크아웃
+        uses: actions/checkout@v3
+
+      - name: Python 설정
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.9"
+
+      - name: 의존성 설치
+        run: |
+          pip install selenium webdriver-manager
+
+      - name: CCTV 영상 URL 스크랩 실행
+        run: python scrape_cctv.py
