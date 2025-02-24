@@ -15,7 +15,7 @@ def get_cctv_video_url():
     driver = webdriver.Chrome(service=service, options=options)
 
     # ✅ CCTV 페이지 로드
-    url = "https://www.utic.go.kr/jsp/map/cctvStream.jsp?cctvid=L900033"
+    url = "https://www.utic.go.kr/jsp/map/cctvStream.jsp?cctvid=L900033&cctvname=%25EB%258F%2599%25EC%2584%259C%25EC%259A%25B8%25EB%258C%2580%25EC%2582%25AC%25EA%25B1%25B0%25EB%25A6%25AC&kind=EE&cctvip=60204&cctvch=undefined&id=undefined&cctvpasswd=undefined&cctvport=undefined&minX=127.1158589926679&minY=37.44945412462696&maxX=127.13769799468838&maxY=37.46908224990571"
     driver.get(url)
 
     # ✅ 페이지가 완전히 로드될 때까지 대기
